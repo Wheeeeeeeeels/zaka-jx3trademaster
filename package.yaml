@@ -1,0 +1,64 @@
+name: jx3-trade-helper
+version: 0.1.0.0
+github: "your-github-username/jx3-trade-helper"
+license: MIT
+author: "Your Name"
+maintainer: "your.email@example.com"
+copyright: "2024"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+dependencies:
+- base >= 4.7 && < 5
+- threepenny-gui
+- http-conduit
+- aeson
+- sqlite-simple
+- time
+- text
+- containers
+- mtl
+- vector
+- scientific
+- bytestring
+- utf8-string
+
+library:
+  source-dirs: src
+  dependencies:
+    - threepenny-gui
+    - http-conduit
+    - aeson
+    - sqlite-simple
+    - time
+    - text
+    - containers
+    - mtl
+    - vector
+    - scientific
+    - bytestring
+    - utf8-string
+
+executables:
+  jx3-trade-helper:
+    main: Main.hs
+    source-dirs: app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - jx3-trade-helper
+
+tests:
+  jx3-trade-helper-test:
+    main: Spec.hs
+    source-dirs: test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - jx3-trade-helper 
